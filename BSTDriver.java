@@ -32,9 +32,12 @@ public class BSTDriver {
 		tree.postOrderWithoutRecursion(tree.root);
 		System.out.println();
 		System.out.println("Count of all node: "+tree.countAllNode(tree.root));
-		System.out.println("Count Leaf Node: "+tree.countLeafNode(tree.root));
+//		System.out.println("Count Leaf Node: "+tree.countLeafNode(tree.root));
 		System.out.println("Count HalfLeaf Node: "+tree.countHalfLeafNode(tree.root));
 		System.out.println("Count Full Node: "+tree.countFullNode(tree.root));
 		System.out.println("Count Full Node Iteratively: "+tree.countFullNodeIteratively(tree.root));
+		
+		System.out.println("Level Order Traversal ");
+		tree.printLevelOrderTraversal(tree.root);
 	}
 }

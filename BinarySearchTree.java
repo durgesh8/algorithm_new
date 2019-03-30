@@ -1,5 +1,7 @@
 package tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinarySearchTree {
@@ -217,6 +219,38 @@ public class BinarySearchTree {
 		}
 		return count;
 		
+	}
+	
+	public void printLevelOrderTraversal(TreeNode root) {
+		/*
+		 * Stack<TreeNode> st1=new Stack<TreeNode>(); Stack<TreeNode> st2=new
+		 * Stack<TreeNode>(); st1.push(root); while(!st1.isEmpty() || !st2.isEmpty()) {
+		 * while(!st1.isEmpty()) { TreeNode crrNode=st1.pop();
+		 * System.out.print(crrNode.getData()+" "); if(crrNode.getRightChild()!=null) {
+		 * st2.push(crrNode.getRightChild()); }if(crrNode.getLeftChild()!=null)
+		 * st2.push(crrNode.getLeftChild()); }
+		 * 
+		 * System.out.println("------------");
+		 * 
+		 * while(!st2.isEmpty()) { TreeNode crrNode=st2.pop();
+		 * System.out.print(crrNode.getData()+" "); if(crrNode.getRightChild()!=null) {
+		 * st1.push(crrNode.getRightChild()); }if(crrNode.getLeftChild()!=null)
+		 * st1.push(crrNode.getLeftChild()); } System.out.println("------------");
+		 * 
+		 * }
+		 */
+		
+		Queue<TreeNode> queue= new LinkedList<TreeNode>();
+		queue.add(root);
+		while(!queue.isEmpty()) {
+			TreeNode crrNode=queue.poll();
+			System.out.print(crrNode.getData()+" ");
+			if(crrNode.getLeftChild()!=null)
+				queue.add(crrNode.getLeftChild());
+			if(crrNode.getRightChild()!=null)
+				queue.add(crrNode.getRightChild());
+		}
+	
 	}
 	
 }
